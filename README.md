@@ -34,7 +34,8 @@ No secrets are stored in the skill files — the API key always lives in the env
 ## Setup
 
 1. Get a cheapapis.net API key (looks like `apikey_...`) at https://cheapapis.net
-2. Export it as `CHEAPAPIS_API_KEY`, e.g. add to the Hermes `.env`
+   Get an API key from [cheapapis.net](https://cheapapis.net); see the repo's [get_apikey_tutorial.md](https://github.com/lililibonaba-stack/grok-search-mcp/blob/main/get_apikey_tutorial.md) for how to create one.
+3. Export it as `CHEAPAPIS_API_KEY`, e.g. add to the Hermes `.env`
    (`~/.hermes/.env` on Linux/macOS, `%LOCALAPPDATA%\hermes\.env` on Windows):
 
    ```
@@ -42,7 +43,7 @@ No secrets are stored in the skill files — the API key always lives in the env
    ```
 
    Hermes loads `.env` into the session environment automatically.
-3. Dependencies: Python 3 with `httpx` (`pip install httpx`). A `curl`-only fallback is documented
+4. Dependencies: Python 3 with `httpx` (`pip install httpx`). A `curl`-only fallback is documented
    in SKILL.md.
 
 ## Usage
