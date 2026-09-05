@@ -52,18 +52,9 @@ CHEAPAPIS_API_KEY=apikey_...
 Hermes loads `.env` into the session environment automatically, so scripts run from
 the terminal already see it.
 
-Host-specific note (this Windows machine): the key here is stored under a different
-name, `HERMES_CUSTOM_CHEAPAPIS_NET_API_KEY`, in `$LOCALAPPDATA/hermes/.env`. Map it
-before running:
-
-```bash
-export $(grep -E '^HERMES_CUSTOM_CHEAPAPIS_NET_API_KEY=' "$LOCALAPPDATA/hermes/.env" | xargs)
-export CHEAPAPIS_API_KEY="$HERMES_CUSTOM_CHEAPAPIS_NET_API_KEY"
-```
-
-Dependencies: `httpx` only. Installed in the miniconda Python (user site-packages,
-2026-09-05). If a fresh machine lacks it, fall back to `curl` (see below) — do not
-pip install into the Hermes venv.
+Dependencies: `httpx` only (installed in the miniconda Python user site-packages on the
+original machine, 2026-09-05). On a fresh machine just install it:
+`pip install httpx`. Do not pip install into the Hermes venv itself.
 
 ## Usage
 
@@ -110,7 +101,8 @@ endpoint itself is down, fall back to built-in `web_search` and say so in your a
 
 ## Verification Checklist
 
-- [ ] Key exported: `HERMES_CUSTOM_CHEAPAPIS_NET_API_KEY` from `$LOCALAPPDATA/hermes/.env` → `CHEAPAPIS_API_KEY`
+- [ ] `pip install httpx` done (or already present)
+- [ ] `CHEAPAPIS_API_KEY` set (from Hermes `.env`)
 - [ ] Script path resolved (`$HOME/.hermes/skills/research/grok-web-search/scripts/grok_search.py`)
 - [ ] First real query returned non-empty text with (ideally) source links
 - [ ] On failure: retried once, then fell back to built-in `web_search` and disclosed it
