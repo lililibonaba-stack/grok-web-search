@@ -90,13 +90,10 @@ endpoint itself is down, fall back to built-in `web_search` and say so in your a
    same shell invocation. In MSYS/git-bash on Windows, use `$HOME/.hermes/.env`.
 4. **Network egress.** This host sometimes can't reach raw.githubusercontent.com but may
    still reach cheapapis.net; if curl hangs, test the endpoint before blaming the key.
-5. **ALL_PROXY breaks httpx.** The Hermes `.env` sets `ALL_PROXY=socks5://127.0.0.1:7897`,
-   and httpx then fails with "the 'socksio' package is not installed". Fix (either):
-   `unset ALL_PROXY all_proxy` before running the script (HTTP_PROXY/HTTPS_PROXY still
-   work for httpx), or `pip install --user "httpx[socks]"`.
-6. **Output is prose, not data.** Don't pipe it into JSON parsers downstream; treat it as
+
+5. **Output is prose, not data.** Don't pipe it into JSON parsers downstream; treat it as
    an already-digested briefing and cite the source links it contains.
-7. **Respect upstream rate limits** — one query per question. Batch questions into one
+6. **Respect upstream rate limits** — one query per question. Batch questions into one
    well-formed query instead of firing five calls.
 
 ## Verification Checklist
