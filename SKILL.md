@@ -54,7 +54,7 @@ the terminal already see it.
 
 Dependencies: `httpx` only (installed in the miniconda Python user site-packages on the
 original machine, 2026-09-05). On a fresh machine just install it:
-`pip install httpx`. Do not pip install into the Hermes venv itself.
+`pip install httpx`. 
 
 ## Usage
 
