@@ -1,14 +1,9 @@
 # grok-web-search (Hermes Agent skill)
 
-A [Hermes Agent](https://hermes-agent.nousresearch.com/docs) skill for real-time web search via
-`grok-4.5-search` on [cheapapis.net](https://cheapapis.net).
-
-It is a plain-script port of [grok-search-mcp](https://github.com/lililibonaba-stack/grok-search-mcp) (MIT):
-instead of a fastmcp server exposing one tool, the agent runs a Python script from the terminal.
-
-The `grok-4.5-search` model has **server-side real-time web search** and can also read the content of
-URLs it encounters, so answers reflect what pages actually say rather than model memory. One call
-returns a digested briefing with source links.
+This is a custom Grok search skill built for Hermes. It leverages Grok’s powerful search engine — a capability that is not available through any public API. 
+The skill supports real‑time web search with source links, and it can scrape and read the content of any URL it encounters. As a result,
+search results are based on the actual content displayed on the pages, rather than solely on information stored in the model’s memory. 
+It is particularly effective at retrieving the latest information from social media platforms such as X (formerly Twitter) or Reddit.
 
 ## When to use
 
